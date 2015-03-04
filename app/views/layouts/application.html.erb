@@ -29,9 +29,16 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to 'Log In', new_user_session_path %>
-          </li>
+          <% if user_signed_in? %>
+            <p class="navbar-text">Hi, <%= current_user.handle %>!</p>
+            <li>
+              <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to 'Log In', new_user_session_path %>
+            </li>
+          <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
