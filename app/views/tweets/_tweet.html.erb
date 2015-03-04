@@ -1,1 +1,13 @@
-<li><%= tweet.body %></li>
+<li class="tweet">
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="http://placehold.it/64x64" alt="Placeholder">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= tweet.user.handle %></h4>
+      <p><%= tweet.body %></p>
+    </div>
+  </div>
+</li>
