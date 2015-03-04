@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, only: [:show]
+  resource :profile, only: [:edit, :update]
 end
