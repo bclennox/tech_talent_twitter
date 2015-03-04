@@ -5,4 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tweets, dependent: :destroy
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  def recent_tweets
+    tweets.limit(5)
+  end
 end
