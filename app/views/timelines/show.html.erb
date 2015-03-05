@@ -4,8 +4,12 @@
       <h1>Your Timeline</h1>
     </div>
 
+    <%= paginate @tweets %>
+
     <ul class="list-unstyled tweets">
       <%= render @tweets %>
     </ul>
+
+    <%= paginate @tweets %>
   </div>
 </div>

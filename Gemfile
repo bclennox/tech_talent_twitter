@@ -6,6 +6,7 @@ gem 'awesome_print'
 gem 'carrierwave'
 gem 'devise'
 gem 'faker'
+gem 'kaminari'
 gem 'rails_12factor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

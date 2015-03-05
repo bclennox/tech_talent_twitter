@@ -2,6 +2,10 @@
   <h1>Everyone's Tweets</h1>
 </div>
 
+<%= paginate @tweets %>
+
 <ul class="tweets list-unstyled">
   <%= render @tweets %>
 </ul>
+
+<%= paginate @tweets %>
