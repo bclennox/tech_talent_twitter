@@ -12,4 +12,19 @@
 
     <%= paginate @tweets %>
   </div>
+
+  <div class="col-md-6">
+    <div class="page-header">
+      <h1>Tweet Something</h1>
+    </div>
+
+    <%= form_for(@tweet) do |f| %>
+      <div class="form-group">
+        <%= f.label :body %>
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+
+      <%= f.submit 'Tweet It', class: 'btn btn-default' %>
+    <% end %>
+  </div>
 </div>
