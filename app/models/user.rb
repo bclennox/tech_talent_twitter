@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tweets, dependent: :destroy
+  has_many :follows
+  has_many :followings, through: :follows
 
   mount_uploader :avatar, AvatarUploader
 
@@ -14,5 +16,9 @@ class User < ActiveRecord::Base
 
   def recent_tweets
     tweets.limit(5)
+  end
+
+  def available_followings
+    self.class.where.not(id: follows.select(:following_id)).where.not(id: id)
   end
 end

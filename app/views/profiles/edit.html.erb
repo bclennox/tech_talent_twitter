@@ -34,4 +34,25 @@
       <%= f.submit 'Save Profile', class: 'btn btn-default' %>
     <% end %>
   </div>
+
+  <div class="col-md-6">
+    <div class="page-header">
+      <h1>Who You're Following</h1>
+    </div>
+
+    <ul>
+      <% @followings.each do |user| %>
+        <li><%= link_to user.handle, user %></li>
+      <% end %>
+    </ul>
+
+    <%= form_tag(follow_profile_path, method: :post) do %>
+      <div class="form-group">
+        <%= label_tag :following_id, 'User' %>
+        <%= select_tag :following_id, options_from_collection_for_select(@available_followings, :id, :handle) %>
+      </div>
+
+      <%= submit_tag 'Follow', class: 'btn btn-default' %>
+    <% end %>
+  </div>
 </div>
