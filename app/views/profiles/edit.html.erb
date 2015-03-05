@@ -4,7 +4,13 @@
       <h1>Edit Profile</h1>
     </div>
 
-    <%= form_for(@user, url: profile_path, method: :patch) do |f| %>
+    <%= form_for(@user, url: profile_path, method: :patch, multipart: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :avatar %>
+        <p><%= avatar_image_tag(@user) %></p>
+        <%= f.file_field :avatar, class: 'form-control' %>
+      </div>
+
       <div class="form-group">
         <%= f.label :first_name %>
         <%= f.text_field :first_name, class: 'form-control' %>

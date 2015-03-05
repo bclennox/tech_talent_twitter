@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :tweets, dependent: :destroy
 
+  mount_uploader :avatar, AvatarUploader
+
   def name
     "#{first_name} #{last_name}"
   end

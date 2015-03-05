@@ -2,7 +2,7 @@
   <div class="media">
     <div class="media-left">
       <%= link_to tweet.user do %>
-        <%= image_tag 'http://placehold.it/64x64', class: 'media-object' %>
+        <%= avatar_image_tag(tweet.user, class: 'media-object') %>
       <% end %>
     </div>
 
