@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
+
 gem 'awesome_print'
 gem 'carrierwave'
 gem 'devise'
 gem 'faker'
+gem 'rails_12factor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
