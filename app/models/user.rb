@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :follows
   has_many :followings, through: :follows
   has_many :favorites
+  has_many :favorite_tweets, through: :favorites, source: :tweet
 
   mount_uploader :avatar, AvatarUploader
 
