@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :tweets, dependent: :destroy
   has_many :follows
   has_many :followings, through: :follows
+  has_many :favorites
 
   mount_uploader :avatar, AvatarUploader
 
@@ -20,5 +21,17 @@ class User < ActiveRecord::Base
 
   def available_followings
     self.class.where.not(id: follows.select(:following_id)).where.not(id: id)
+  end
+
+  def favorite?(tweet)
+    favorites.where(tweet: tweet).exists?
+  end
+
+  def toggle_favorite(tweet)
+    if favorite?(tweet)
+      favorites.where(tweet: tweet).first.destroy
+    else
+      favorites.create(tweet: tweet)
+    end
   end
 end

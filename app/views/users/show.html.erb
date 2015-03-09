@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-md-8">
-    <div class="panel panel-default">
+    <div class="panel panel-default user-tweets">
       <div class="panel-heading">
         <h3 class="panel-title">Recent Tweets</h3>
       </div>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="col-md-4">
-    <div class="panel panel-default">
+    <div class="panel panel-default user-profile">
       <div class="panel-heading">
         <h3 class="panel-title">Profile</h3>
       </div>
@@ -36,6 +36,9 @@
 
           <dt>Tweets</dt>
           <dd><%= @user.tweets.count %></dd>
+
+          <dt>Favorites</dt>
+          <dd><%= @user.favorites.count %></dd>
         </dl>
       </div>
     </div>

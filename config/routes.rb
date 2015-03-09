@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :tweets, only: [:index, :create]
+  resources :tweets, only: [:index, :create] do
+    member do
+      post :favorite
+    end
+  end
+
   resource :timeline, only: [:show]
 end

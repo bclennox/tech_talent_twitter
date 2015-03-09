@@ -9,6 +9,8 @@
     <div class="media-body">
       <h4 class="media-heading">
         <%= link_to tweet.user.handle, tweet.user %>
+        <small><%= tweet_date(tweet) %></small>
+        <%= tweet_favorite(tweet) if user_signed_in? %>
       </h4>
       <p><%= tweet.body %></p>
     </div>
